@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme {
+  /* Colors */
+  --color-yellow: oklch(84% 0.18 90deg);
+  --color-orange: oklch(72% 0.17 35deg);
+  --color-bg: oklch(16% 0.01 240deg);
+  --color-card: oklch(100% 0 0deg / 5%);
+  --color-text: oklch(100% 0 0deg);
+  --color-text-muted: oklch(100% 0 0deg / 60%);
+  --color-glass-border: oklch(100% 0 0deg / 10%);
+
+  /* Breakpoints */
+  --breakpoint-xs: 450px;
+  --breakpoint-sm: 580px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1250px;
+
+  /* Shadows */
+  --shadow-1: -4px 8px 24px oklch(0% 0 0deg / 25%);
+  --shadow-2: 0 16px 30px oklch(0% 0 0deg / 25%);
+  --shadow-3: 0 16px 40px oklch(0% 0 0deg / 25%);
+  --shadow-5: 0 24px 80px oklch(0% 0 0deg / 25%);
+
+  /* Animations */
+  --animate-fade-in: fadein 0.5s ease forwards;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* ─── Base Reset ─── */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  .maplibregl-popup-content {
+    @apply rounded-none! bg-transparent! p-0! shadow-none!;
+  }
+
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+}
+
+/* ─── Scrollbar ─── */
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+@media (width >= 768px) {
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(240deg 2% 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid hsl(240deg 2% 12%);
+  background: hsl(0deg 0% 100% / 10%);
+  border-radius: 20px;
+  box-shadow:
+    inset 1px 1px 0 hsl(0deg 0% 100% / 11%),
+    inset -1px -1px 0 hsl(0deg 0% 100% / 11%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
+}
+
+::-webkit-scrollbar-button {
+  height: 30px;
+  background-color: hsl(240deg 2% 12%);
+}
+
+/* ─── Inline Scrollbar (horizontal lists) ─── */
+
+@layer utilities {
+  .has-scrollbar {
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: oklch(from var(--color-bg) calc(l + 0.08) c h);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-orange);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+}
+
+@media (width >= 1250px) {
+  body::-webkit-scrollbar {
+    width: 1.25rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border: 0.3125rem solid var(--color-bg);
+    background: oklch(from var(--color-orange) l c h / 15%);
+    border-radius: 1.25rem;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: oklch(from var(--color-orange) l c h / 25%);
+  }
+
+  body::-webkit-scrollbar-button {
+    height: 3.75rem;
+  }
+}
+
+/* ─── Print ─── */
+
+@media print {
+  :root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: var(--color-bg) !important;
+  }
+}
