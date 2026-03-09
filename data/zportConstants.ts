@@ -100,39 +100,39 @@ export const TESTIMONIALS: Testimonial[] = [
 export const PROGRAMMING_LANGUAGES: { name: string; url: string }[] = [
   {
     name: "HTML5",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg",
+    url: "/assets/icons/tech/html5.svg",
   },
   {
     name: "CSS3",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg",
+    url: "/assets/icons/tech/css3.svg",
   },
   {
     name: "JavaScript",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    url: "/assets/icons/tech/javascript.svg",
   },
   {
     name: "TypeScript",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    url: "/assets/icons/tech/typescript.svg",
   },
   {
     name: "TailwindCSS",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    url: "/assets/icons/tech/tailwindcss.svg",
   },
   {
     name: "React",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    url: "/assets/icons/tech/react.svg",
   },
   {
     name: "Next.js",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    url: "/assets/icons/tech/nextjs.svg",
   },
   {
     name: "Vue",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    url: "/assets/icons/tech/vuejs.svg",
   },
   {
     name: "Laravel",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    url: "/assets/icons/tech/laravel.svg",
   },
 ];
 
