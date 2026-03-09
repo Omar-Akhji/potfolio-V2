@@ -1,5 +1,3 @@
-"use client";
-
 import { Send } from "lucide-react";
 
 export default function ContactContent() {

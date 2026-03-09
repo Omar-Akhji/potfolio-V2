@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import {
-  SERVICES,
-  PROGRAMMING_LANGUAGES,
-} from "../data/zportConstants";
+import dynamic from "next/dynamic";
+import { SERVICES, PROGRAMMING_LANGUAGES } from "../data/zportConstants";
 import {
   FileCode2,
   MonitorSmartphone,
@@ -11,8 +9,23 @@ import {
   Camera,
   Terminal,
 } from "lucide-react";
-import TestimonialsList from "./TestimonialsList";
 import ClientsList from "./ClientsList";
+
+const TestimonialsList = dynamic(() => import("./TestimonialsList"), {
+  loading: () => (
+    <section className="mb-12">
+      <div className="mb-6 h-8 w-40 animate-pulse rounded bg-white/10" />
+      <div className="flex gap-4 overflow-hidden">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div
+            key={i}
+            className="border-glass-border h-52 w-72 shrink-0 animate-pulse rounded-2xl border bg-white/5"
+          />
+        ))}
+      </div>
+    </section>
+  ),
+});
 
 // Helper to map Z PORT SVGs to Lucide Icons for the unified aesthetic
 const getServiceIcon = (title: string) => {
