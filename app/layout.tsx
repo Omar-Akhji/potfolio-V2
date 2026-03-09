@@ -16,8 +16,46 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Resume | John Doe",
-  description: "Professional CV and Resume",
+  metadataBase: new URL("https://omarakhji.com"),
+  title: {
+    default: "Omar Akhji — Full Stack Web Developer",
+    template: "%s | Omar Akhji",
+  },
+  description:
+    "Full Stack Web Developer based in Rabat, Morocco. Specializing in React, Next.js, Node.js, and Python. Explore my portfolio, resume, and blog.",
+  keywords: [
+    "Omar Akhji",
+    "Full Stack Developer",
+    "Web Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "Rabat",
+    "Morocco",
+    "Portfolio",
+  ],
+  authors: [{ name: "Omar Akhji" }],
+  creator: "Omar Akhji",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Omar Akhji",
+    title: "Omar Akhji — Full Stack Web Developer",
+    description:
+      "Full Stack Web Developer based in Rabat, Morocco. Explore my portfolio, resume, and blog.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Omar Akhji — Full Stack Web Developer",
+    description:
+      "Full Stack Web Developer based in Rabat, Morocco. Explore my portfolio, resume, and blog.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 export default function RootLayout({

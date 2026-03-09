@@ -30,7 +30,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       }`}
     >
       {/* ── Sidebar Info Row ── */}
-      <div className="relative flex items-center justify-start gap-4 sm:gap-6 xl:flex-col">
+      <header className="relative flex items-center justify-start gap-4 sm:gap-6 xl:flex-col">
         {/* Avatar */}
         <div className="border-glass-border shadow-2 from-yellow to-orange text-bg flex h-20 w-20 shrink-0 items-center justify-center rounded-full border bg-white/5 bg-linear-to-br text-[1.75rem] font-bold transition-transform hover:scale-105 sm:h-30 sm:w-30 sm:text-[2.75rem] xl:mx-auto xl:h-37.5 xl:w-37.5 xl:text-[3.5rem]">
           {initials}
@@ -63,7 +63,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
           </span>
         </button>
-      </div>
+      </header>
 
       {/* ── Expandable Details ── */}
       <div

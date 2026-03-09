@@ -2,15 +2,15 @@ import type { ResumeData } from "../types/resume";
 
 export const resumeData: ResumeData = {
   personal: {
-    initials: "JD",
-    name: "John Doe",
-    title: "Full Stack Developer",
+    initials: "OA",
+    name: "Omar Akhji",
+    title: "Full Stack Web Developer",
     contact: {
-      email: "john.doe@email.com",
-      phone: "(555) 123-4567",
-      location: "San Francisco, CA",
-      linkedin: "linkedin.com/in/johndoe",
-      github: "github.com/johndoe",
+      email: "omar.akhji@um5r.ac.ma",
+      phone: "+212 7 66 43 68 62",
+      location: "Rabat, Morocco",
+      linkedin: "linkedin.com/in/omar-akhji",
+      github: "github.com/omar-akhji",
     },
     skills: [
       { name: "JavaScript", level: 95 },
@@ -24,13 +24,14 @@ export const resumeData: ResumeData = {
       { name: "AWS", level: 70 },
     ],
     languages: [
-      { name: "English", level: "Native" },
-      { name: "Spanish", level: "Fluent" },
-      { name: "French", level: "Intermediate" },
+      { name: "English", level: "80%" },
+      { name: "Arabic", level: "90%" },
+      { name: "German", level: "80%" },
+      { name: "French", level: "60%" },
     ],
   },
   summary:
-    "Innovative Full Stack Developer with 5+ years of experience building scalable web applications and leading development teams. Expertise in modern JavaScript frameworks, cloud architecture, and agile methodologies. Passionate about creating elegant solutions to complex problems and mentoring junior developers. Proven track record of delivering high-quality software solutions that drive business growth and improve user experience.",
+    "I am a motivated and rigorous with a strong interest in economics and management. I am confident that my training at the Faculty of Legal, Economic and Social Sciences in Souissi has given me the skills and knowledge to succeed in this field. I also have excellent communication and teamwork skills, which allows me to easily integrate into any type of professional environment. I am very excited about putting my skills and knowledge to work for a company and actively contributing to its development. I am confident that I can bring real added value to your team.",
   experience: [
     {
       jobTitle: "Senior Full Stack Developer",
@@ -58,39 +59,24 @@ export const resumeData: ResumeData = {
   ],
   education: [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of California, Berkeley",
-      date: "September 2014 - May 2018",
-      details: [
-        [
-          { text: "GPA: 3.8/4.0", bold: true },
-          { text: " | Dean's List (All Semesters)" },
-        ],
-        [
-          { text: "Relevant Coursework:", bold: true },
-          {
-            text: " Data Structures & Algorithms, Web Development, Database Systems, Software Engineering, Computer Networks, Machine Learning, Operating Systems",
-          },
-        ],
-      ],
+      degree: "Baccalaureate +1 in Economy and Management",
+      school:
+        "Mohammed V University in Rabat, Faculty of Legal, Economic and Social Sciences",
+      date: "2020 — 2023",
+      details: [[{ text: "Souissi Campus, Rabat" }]],
+    },
+    {
+      degree: "First Year Bachelor's in Physics and Chemistry",
+      school: "Mohammed V University in Rabat, Faculty of Science",
+      date: "2019 — 2020",
+      details: [[{ text: "Scientific Track" }]],
+    },
+    {
+      degree: "High School Degree — Physics and Chemistry",
+      school: "Abdrahmand El Dakhel High School",
+      date: "2016 — 2019",
+      details: [[{ text: "Baccalaureate in Physical Sciences" }]],
     },
   ],
-  certifications: [
-    {
-      name: "AWS Certified Solutions Architect - Associate",
-      issuer: "Amazon Web Services",
-      year: 2022,
-    },
-    { name: "Employee of the Year", issuer: "Tech Solutions Inc.", year: 2022 },
-    {
-      name: "Hackathon Winner - Best Innovation",
-      issuer: "Bay Area Tech Meetup",
-      year: 2021,
-    },
-    {
-      name: "Professional Scrum Master I (PSM I)",
-      issuer: "Scrum.org",
-      year: 2020,
-    },
-  ],
+  certifications: [],
 };

@@ -93,6 +93,68 @@
   background-color: hsl(240deg 2% 12%);
 }
 
+/* ─── Testimonials Modal ─── */
+
+.testimonials-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  background: var(--color-bg);
+  border: 1px solid oklch(100% 0 0deg / 10%);
+  border-radius: 0.875rem;
+  box-shadow: var(--shadow-5);
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  max-width: min(90vw, 32rem);
+  max-height: 90vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  color: var(--color-text);
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    overlay 0.25s ease allow-discrete,
+    display 0.25s ease allow-discrete;
+}
+
+.testimonials-modal[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .testimonials-modal[open] {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.testimonials-modal::backdrop {
+  background: hsl(0deg 0% 5% / 0%);
+  backdrop-filter: blur(0);
+  transition:
+    background-color 0.25s ease,
+    backdrop-filter 0.25s ease,
+    overlay 0.25s ease allow-discrete,
+    display 0.25s ease allow-discrete;
+}
+
+.testimonials-modal[open]::backdrop {
+  background: hsl(0deg 0% 5% / 80%);
+  backdrop-filter: blur(4px);
+}
+
+@starting-style {
+  .testimonials-modal[open]::backdrop {
+    background: hsl(0deg 0% 5% / 0%);
+    backdrop-filter: blur(0);
+  }
+}
+
 /* ─── Inline Scrollbar (horizontal lists) ─── */
 
 @layer utilities {
@@ -101,23 +163,48 @@
     overscroll-behavior-inline: contain;
 
     &::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
+      height: 8px;
     }
 
     &::-webkit-scrollbar-track {
-      background: oklch(from var(--color-bg) calc(l + 0.08) c h);
-      border-radius: 5px;
+      background: oklch(from var(--color-bg) calc(l + 0.06) c h);
+      border-radius: 999px;
+      margin-inline: 1.25rem;
     }
 
     &::-webkit-scrollbar-thumb {
+      background: linear-gradient(
+        to right,
+        var(--color-orange),
+        var(--color-yellow)
+      );
+      border-radius: 999px;
+      border: 2px solid oklch(from var(--color-bg) calc(l + 0.06) c h);
+      transition: background 0.3s ease;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
       background: var(--color-orange);
-      border-radius: 5px;
+      border-color: transparent;
     }
 
     &::-webkit-scrollbar-button {
       display: none;
     }
+  }
+}
+
+@media (width >= 768px) {
+  .has-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .has-scrollbar::-webkit-scrollbar-track {
+    margin-inline: 6.25rem;
+  }
+
+  .has-scrollbar::-webkit-scrollbar-thumb {
+    border-width: 1px;
   }
 }
 
