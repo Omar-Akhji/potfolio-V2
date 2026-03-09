@@ -12,7 +12,9 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 );
 
 const TestimonialsList = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState<number | null>(null);
+  const [activeTestimonial, setActiveTestimonial] = useState<number | null>(
+    null,
+  );
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -41,9 +43,7 @@ const TestimonialsList = () => {
             </div>
 
             <div className="mb-2">
-              <h4 className="text-text mb-1 font-medium">
-                {testimonial.name}
-              </h4>
+              <h4 className="text-text mb-1 font-medium">{testimonial.name}</h4>
               <time className="text-yellow text-xs font-semibold">
                 {testimonial.date}
               </time>
@@ -69,6 +69,9 @@ const TestimonialsList = () => {
         onClose={() => setActiveTestimonial(null)}
         onClick={(e) => {
           if (e.target === dialogRef.current) setActiveTestimonial(null);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Escape") setActiveTestimonial(null);
         }}
         aria-label="Testimonial details"
       >

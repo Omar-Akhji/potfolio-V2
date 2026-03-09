@@ -17,6 +17,7 @@ export default function ContactContent() {
         <div className="border-glass-border relative h-62.5 w-full overflow-hidden rounded-2xl border bg-white/5 sm:h-100">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105884.81432412854!2d-6.911831826075939!3d33.96919056678258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871af50c5f%3A0xb003097fa3670ee9!2sRabat!5e0!3m2!1sen!2sma!4v1710000000000!5m2!1sen!2sma"
+            title="Google Maps location of Rabat, Morocco"
             width="100%"
             height="100%"
             style={{ border: 0 }}
