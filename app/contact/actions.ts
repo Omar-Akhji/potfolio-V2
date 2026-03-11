@@ -18,8 +18,6 @@ const ContactSchema = z.object({
     .max(2000, "Message must be under 2000 characters"),
 });
 
-// Re-export the type for convenience
-export type { ContactFormState } from "../../types/contact";
 
 // ── Server Action ──
 export async function sendContactEmail(
