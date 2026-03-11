@@ -34,8 +34,17 @@ const TestimonialsList = () => {
         {TESTIMONIALS.map((testimonial, idx) => (
           <li
             key={testimonial.name}
-            className="border-glass-border relative mt-8 w-full shrink-0 snap-center cursor-pointer rounded-2xl border bg-white/5 p-3.75 pt-11.25 transition-all hover:bg-white/8 md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
+            className="border-glass-border relative mt-8 w-full shrink-0 snap-center cursor-pointer rounded-2xl border bg-white/5 p-3.75 pt-11.25 transition-all hover:bg-white/8 focus:ring-2 focus:ring-orange/50 focus:outline-hidden md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
             onClick={() => setActiveTestimonial(idx)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setActiveTestimonial(idx);
+              }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-label={`View ${testimonial.name}'s testimonial`}
           >
             <div className="bg-bg border-glass-border shadow-2 from-yellow/10 to-orange/10 absolute top-0 left-0 flex size-16 translate-x-3.75 -translate-y-6.25 items-center justify-center rounded-full border bg-linear-to-br">
               <span className="from-yellow to-orange bg-linear-to-br bg-clip-text text-2xl font-bold text-transparent">
