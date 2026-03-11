@@ -1,7 +1,9 @@
 "use server";
 
+import "server-only";
 import { z } from "zod/v4";
 import nodemailer from "nodemailer";
+import type { ContactFormState } from "../../types/contact";
 
 // ── Validation Schema ──
 const ContactSchema = z.object({
@@ -16,16 +18,8 @@ const ContactSchema = z.object({
     .max(2000, "Message must be under 2000 characters"),
 });
 
-// ── Response Type ──
-export interface ContactFormState {
-  success: boolean;
-  message: string;
-  errors?: {
-    fullname?: string;
-    email?: string;
-    message?: string;
-  };
-}
+// Re-export the type for convenience
+export type { ContactFormState } from "../../types/contact";
 
 // ── Server Action ──
 export async function sendContactEmail(

@@ -3,10 +3,8 @@
 import { useState, useActionState } from "react";
 import { Send, Loader2, CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import { PageWrapper } from "./ui/PageWrapper";
-import {
-  sendContactEmail,
-  type ContactFormState,
-} from "../app/contact/actions";
+import { sendContactEmail } from "../app/contact/actions";
+import type { ContactFormState } from "../types/contact";
 
 const initialState: ContactFormState = {
   success: false,
