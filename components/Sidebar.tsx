@@ -49,7 +49,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Toggle Button */}
         <button
           onClick={() => setIsActive(!isActive)}
-          className="border-glass-border bg-card text-orange shadow-2 hover:text-yellow rounded-tr-card absolute -top-4 -right-4 z-10 flex items-center gap-1 rounded-tl-none rounded-br-none rounded-bl-[0.9375rem] border px-2.5 py-2.5 text-[0.8125rem] transition-all hover:bg-white/10 sm:-top-8 sm:-right-8 sm:px-4 sm:py-2.5 xl:hidden"
+          className="border-glass-border bg-card text-orange shadow-2 hover:text-yellow rounded-tr-card absolute -top-4 -right-4 z-10 flex cursor-pointer items-center gap-1 rounded-tl-none rounded-br-none rounded-bl-[0.9375rem] border px-2.5 py-2.5 text-[0.8125rem] transition-all hover:bg-white/10 sm:-top-8 sm:-right-8 sm:px-4 sm:py-2.5 xl:hidden"
           aria-label={isActive ? "Hide Contacts" : "Show Contacts"}
         >
           <span className="hidden text-xs sm:block">
