@@ -34,9 +34,10 @@ const TestimonialsList = () => {
         {TESTIMONIALS.map((testimonial, idx) => (
           <li
             key={testimonial.name}
-            className="border-glass-border relative mt-8 w-full shrink-0 snap-center rounded-2xl border bg-white/5 p-3.75 pt-11.25 md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
+            className="border-glass-border relative mt-8 w-full shrink-0 snap-center cursor-pointer rounded-2xl border bg-white/5 p-3.75 pt-11.25 transition-all hover:bg-white/8 md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
+            onClick={() => setActiveTestimonial(idx)}
           >
-            <div className="bg-bg border-glass-border shadow-2 from-yellow/10 to-orange/10 absolute top-0 left-0 flex h-16 w-16 translate-x-3.75 -translate-y-6.25 items-center justify-center rounded-full border bg-linear-to-br">
+            <div className="bg-bg border-glass-border shadow-2 from-yellow/10 to-orange/10 absolute top-0 left-0 flex size-16 translate-x-3.75 -translate-y-6.25 items-center justify-center rounded-full border bg-linear-to-br">
               <span className="from-yellow to-orange bg-linear-to-br bg-clip-text text-2xl font-bold text-transparent">
                 {testimonial.name.charAt(0)}
               </span>
@@ -52,13 +53,6 @@ const TestimonialsList = () => {
             <p className="text-text-muted line-clamp-4 text-sm leading-relaxed font-light">
               {testimonial.text}
             </p>
-
-            <button
-              className="text-orange hover:text-yellow mt-2 text-xs font-semibold tracking-wider uppercase transition-colors"
-              onClick={() => setActiveTestimonial(idx)}
-            >
-              Read Details
-            </button>
           </li>
         ))}
       </ul>
@@ -78,13 +72,13 @@ const TestimonialsList = () => {
         {activeTestimonial !== null && (
           <div className="relative p-4 md:p-6">
             <button
-              className="bg-card text-text border-glass-border hover:text-orange absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border transition-colors"
+              className="bg-card text-text border-glass-border hover:text-orange absolute top-4 right-4 flex size-8 items-center justify-center rounded-full border transition-colors"
               onClick={() => setActiveTestimonial(null)}
             >
               ✕
             </button>
             <div className="mb-6 flex items-center gap-4">
-              <div className="bg-bg border-glass-border shadow-2 from-yellow/10 to-orange/10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border bg-linear-to-br">
+              <div className="bg-bg border-glass-border shadow-2 from-yellow/10 to-orange/10 flex size-20 shrink-0 items-center justify-center rounded-full border bg-linear-to-br">
                 <span className="from-yellow to-orange bg-linear-to-br bg-clip-text text-3xl font-bold text-transparent">
                   {TESTIMONIALS[activeTestimonial].name.charAt(0)}
                 </span>

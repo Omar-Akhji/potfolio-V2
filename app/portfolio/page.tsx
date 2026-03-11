@@ -5,7 +5,7 @@ const PortfolioContent = dynamic(
   () => import("../../components/PortfolioContent"),
   {
     loading: () => (
-      <div className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 z-1 rounded-[1.25rem] border p-4 sm:mx-auto sm:w-130 sm:p-8 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+      <div className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 sm:mx-auto sm:w-130 sm:p-8 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
         <div className="mb-8 h-9 w-48 animate-pulse rounded bg-white/10" />
         <div className="mb-8 flex gap-4">
           {Array.from({ length: 4 }).map((_, i) => (

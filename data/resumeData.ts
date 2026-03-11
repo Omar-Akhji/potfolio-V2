@@ -24,10 +24,10 @@ export const resumeData: ResumeData = {
       { name: "AWS", level: 70 },
     ],
     languages: [
-      { name: "English", level: "80%" },
-      { name: "Arabic", level: "90%" },
-      { name: "German", level: "80%" },
-      { name: "French", level: "60%" },
+      { name: "English", level: "B2" },
+      { name: "Arabic", level: "C1" },
+      { name: "German", level: "B1" },
+      { name: "French", level: "B1" },
     ],
   },
   summary:

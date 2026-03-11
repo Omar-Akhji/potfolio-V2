@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "../../data/zportConstants";
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 z-1 rounded-[1.25rem] border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -32,9 +33,9 @@ export default function BlogPage() {
             className="group border-glass-border relative flex flex-col overflow-hidden rounded-2xl border bg-white/5 p-4 transition-all duration-300 hover:bg-white/10"
           >
             {/* Glow */}
-            <div className="bg-orange/5 group-hover:bg-orange/15 absolute -top-10 -right-10 h-24 w-24 rounded-full blur-3xl transition-all duration-500" />
+            <div className="bg-orange/5 group-hover:bg-orange/15 absolute -top-10 -right-10 size-24 rounded-full blur-3xl transition-all duration-500" />
 
-            <div className="border-glass-border relative mb-4 h-48 w-full shrink-0 overflow-hidden rounded-xl border">
+            <div className="border-glass-border relative aspect-4/3 w-full shrink-0 overflow-hidden rounded-xl border lg:h-57.5">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -44,24 +45,24 @@ export default function BlogPage() {
               />
             </div>
 
-            <div className="flex grow flex-col">
-              <div className="mb-3 flex items-center gap-3 text-xs sm:text-sm">
-                <span className="bg-card border-glass-border text-orange rounded-full border px-2 py-1 font-medium">
+            <div className="flex grow flex-col pt-3.75 sm:p-6.25">
+              <div className="mb-2.5 flex items-center gap-3">
+                <span className="bg-card border-glass-border text-orange rounded-full border px-3 py-1 text-2.75 font-medium sm:text-xs">
                   {post.category}
                 </span>
                 <time
                   dateTime={post.dateTime}
-                  className="text-text-muted font-light"
+                  className="text-text-muted text-3.5 font-light sm:text-3.75"
                 >
                   {post.date}
                 </time>
               </div>
 
-              <h3 className="text-text group-hover:text-orange mb-2 text-lg leading-tight font-medium transition-colors">
-                {post.title}
+              <h3 className="text-text hover:text-orange mb-2 text-base leading-tight font-semibold transition-colors sm:text-lg">
+                <Link href="#">{post.title}</Link>
               </h3>
 
-              <p className="text-text-muted mt-auto text-sm leading-relaxed font-light">
+              <p className="text-text-muted text-3.5 leading-relaxed font-light sm:text-3.75">
                 {post.text}
               </p>
             </div>

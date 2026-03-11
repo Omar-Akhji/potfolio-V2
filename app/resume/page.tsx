@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 z-1 rounded-[1.25rem] border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -33,7 +33,7 @@ export default function ResumePage() {
               {/* Timeline Column */}
               <div className="flex w-10 shrink-0 flex-col items-center">
                 <div className="flex h-6 flex-col items-center justify-center">
-                  <div className="bg-orange ring-orange/20 z-10 h-4 w-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
+                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
                 </div>
                 <div className="bg-orange/20 group-hover:bg-orange/40 my-3 w-0.5 grow rounded-full transition-colors" />
               </div>
@@ -64,7 +64,7 @@ export default function ResumePage() {
               {/* Timeline Column */}
               <div className="flex w-10 shrink-0 flex-col items-center">
                 <div className="flex h-6 flex-col items-center justify-center">
-                  <div className="bg-orange ring-orange/20 z-10 h-4 w-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
+                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
                 </div>
                 <div className="bg-orange/20 group-hover:bg-orange/40 my-3 w-0.5 grow rounded-full transition-colors" />
               </div>
@@ -120,8 +120,8 @@ export default function ResumePage() {
 /* ── Reusable Section Title ── */
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <header className="mb-6 flex items-center gap-4">
-    <div className="border-glass-border bg-card text-orange shadow-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border">
-      <Award className="h-5 w-5" />
+    <div className="border-glass-border bg-card text-orange shadow-1 flex size-10 shrink-0 items-center justify-center rounded-full border">
+      <Award className="size-5" />
     </div>
     <h3 className="text-text text-xl font-semibold capitalize sm:text-2xl">
       {children}

@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 
 export default function ContactContent() {
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 z-1 rounded-[1.25rem] border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -22,7 +22,7 @@ export default function ContactContent() {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="grayscale invert filter"
+            className="grayscale invert"
           ></iframe>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function ContactContent() {
             type="submit"
             className="group from-yellow to-orange text-bg ml-auto flex items-center gap-2 rounded-full bg-linear-to-r px-6 py-3 font-semibold shadow-[0_0_15px_rgba(255,165,0,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(255,165,0,0.6)] focus:outline-none"
           >
-            <Send className="h-5 w-5" />
+            <Send className="size-5" />
             <span>Send Message</span>
           </button>
         </form>
