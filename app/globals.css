@@ -4,8 +4,8 @@
 
 @theme {
   /* Colors */
-  --color-yellow: oklch(72% 0.19 295deg);    /* violet */
-  --color-orange: oklch(50% 0.28 285deg);    /* blueviolet */
+  --color-yellow: oklch(72% 0.19 295deg); /* violet */
+  --color-orange: oklch(50% 0.28 285deg); /* blueviolet */
   --color-bg: oklch(16% 0.01 240deg);
   --color-card: oklch(100% 0 0deg / 5%);
   --color-text: oklch(100% 0 0deg);

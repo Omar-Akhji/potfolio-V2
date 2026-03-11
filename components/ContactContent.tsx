@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
-import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { useState, useActionState } from "react";
+import { Send, Loader2, CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import { PageWrapper } from "./ui/PageWrapper";
 import {
   sendContactEmail,
@@ -14,6 +14,7 @@ const initialState: ContactFormState = {
 };
 
 export default function ContactContent() {
+  const [mapLoaded, setMapLoaded] = useState(false);
   const [state, formAction, isPending] = useActionState(
     sendContactEmail,
     initialState,
@@ -31,17 +32,31 @@ export default function ContactContent() {
       {/* ── Map ── */}
       <section className="mb-10">
         <div className="border-glass-border relative h-62.5 w-full overflow-hidden rounded-2xl border-2 bg-white/5 sm:h-100">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105884.81432412854!2d-6.911831826075939!3d33.96919056678258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871af50c5f%3A0xb003097fa3670ee9!2sRabat!5e0!3m2!1sen!2sma!4v1710000000000!5m2!1sen!2sma"
-            title="Google Maps location of Rabat, Morocco"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="grayscale invert"
-          ></iframe>
+          {mapLoaded ? (
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105884.81432412854!2d-6.911831826075939!3d33.96919056678258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871af50c5f%3A0xb003097fa3670ee9!2sRabat!5e0!3m2!1sen!2sma!4v1710000000000!5m2!1sen!2sma"
+              title="Google Maps location of Rabat, Morocco"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale invert"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setMapLoaded(true)}
+              className="flex h-full w-full cursor-pointer flex-col items-center justify-center gap-3 transition-colors hover:bg-white/5"
+              aria-label="Load interactive map"
+            >
+              <MapPin className="text-orange size-10 opacity-60" />
+              <span className="text-text-muted text-sm font-medium">
+                Click to load map
+              </span>
+              <span className="text-text-muted/50 text-xs">Rabat, Morocco</span>
+            </button>
+          )}
         </div>
       </section>
 

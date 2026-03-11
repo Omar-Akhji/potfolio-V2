@@ -4,8 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { TESTIMONIALS } from "../data/portfolioData";
 import { SectionTitle } from "./ui/SectionTitle";
 
-
-
 const TestimonialsList = () => {
   const [activeTestimonial, setActiveTestimonial] = useState<number | null>(
     null,
@@ -29,7 +27,7 @@ const TestimonialsList = () => {
         {TESTIMONIALS.map((testimonial, idx) => (
           <li
             key={testimonial.name}
-            className="border-glass-border relative mt-8 w-full shrink-0 snap-center cursor-pointer rounded-2xl border bg-white/5 p-3.75 pt-11.25 transition-all hover:bg-white/8 focus:ring-2 focus:ring-orange/50 focus:outline-hidden md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
+            className="border-glass-border focus:ring-orange/50 relative mt-8 w-full shrink-0 cursor-pointer snap-center rounded-2xl border bg-white/5 p-3.75 pt-11.25 transition-all hover:bg-white/8 focus:ring-2 focus:outline-hidden md:w-[calc(50%-0.5rem)] lg:w-[calc(50%-0.5rem)]"
             onClick={() => setActiveTestimonial(idx)}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {

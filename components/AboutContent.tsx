@@ -45,8 +45,6 @@ const getServiceIcon = (title: string) => {
   }
 };
 
-
-
 export default function AboutContent() {
   return (
     <PageWrapper>

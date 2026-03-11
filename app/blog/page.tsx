@@ -48,12 +48,12 @@ export default function BlogPage() {
 
             <div className="flex grow flex-col pt-3.75 sm:p-6.25">
               <div className="mb-2.5 flex items-center gap-3">
-                <span className="bg-card border-glass-border text-orange rounded-full border px-3 py-1 text-2.75 font-medium sm:text-xs">
+                <span className="bg-card border-glass-border text-orange text-2.75 rounded-full border px-3 py-1 font-medium sm:text-xs">
                   {post.category}
                 </span>
                 <time
                   dateTime={post.dateTime}
-                  className="text-text-muted text-3.5 font-light sm:text-3.75"
+                  className="text-text-muted text-3.5 sm:text-3.75 font-light"
                 >
                   {post.date}
                 </time>
@@ -63,7 +63,7 @@ export default function BlogPage() {
                 <Link href="#">{post.title}</Link>
               </h3>
 
-              <p className="text-text-muted text-3.5 leading-relaxed font-light sm:text-3.75">
+              <p className="text-text-muted text-3.5 sm:text-3.75 leading-relaxed font-light">
                 {post.text}
               </p>
             </div>

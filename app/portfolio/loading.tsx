@@ -20,7 +20,7 @@ export default function PortfolioLoading() {
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i}>
             <div className="border-glass-border mb-4 aspect-4/3 w-full animate-pulse rounded-2xl border bg-white/5" />
-            <div className="ml-2 mb-1 h-4 w-24 animate-pulse rounded bg-white/10" />
+            <div className="mb-1 ml-2 h-4 w-24 animate-pulse rounded bg-white/10" />
             <div className="ml-2 h-3 w-32 animate-pulse rounded bg-white/10" />
           </div>
         ))}

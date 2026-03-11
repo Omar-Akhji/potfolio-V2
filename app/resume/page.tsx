@@ -90,7 +90,9 @@ export default function ResumePage() {
 
       {/* ── Technical Skills ── */}
       <section className="mt-12 mb-8">
-        <SectionTitle icon={<Award className="size-5" />}>Technical Skills</SectionTitle>
+        <SectionTitle icon={<Award className="size-5" />}>
+          Technical Skills
+        </SectionTitle>
         <div className="border-glass-border rounded-2xl border bg-white/5 p-8">
           <ul className="space-y-6">
             {SKILLS.map((skill) => (
@@ -118,5 +120,3 @@ export default function ResumePage() {
     </PageWrapper>
   );
 }
-
-
