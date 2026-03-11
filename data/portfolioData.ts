@@ -1,46 +1,12 @@
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Testimonial {
-  name: string;
-  avatar: string;
-  text: string;
-  date: string;
-}
-
-interface Project {
-  title: string;
-  category: string;
-  image: string;
-}
-
-interface Skill {
-  name: string;
-  percentage: number;
-}
-
-interface TimelineItem {
-  title: string;
-  period: string;
-  description: string;
-}
-
-interface BlogPost {
-  title: string;
-  category: string;
-  date: string;
-  dateTime: string;
-  image: string;
-  text: string;
-}
-
-interface Client {
-  logo: string;
-  alt: string;
-}
+import type {
+  Service,
+  Testimonial,
+  Project,
+  SkillBar,
+  TimelineItem,
+  BlogPost,
+  Client,
+} from "../types/portfolio";
 
 // ===== Services =====
 export const SERVICES: Service[] = [
@@ -245,7 +211,7 @@ export const EXPERIENCE: TimelineItem[] = [
 ];
 
 // ===== Skills =====
-export const SKILLS: Skill[] = [
+export const SKILLS: SkillBar[] = [
   { name: "JavaScript", percentage: 95 },
   { name: "React", percentage: 90 },
   { name: "Node.js", percentage: 88 },

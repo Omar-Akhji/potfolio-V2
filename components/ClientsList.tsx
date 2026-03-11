@@ -1,13 +1,6 @@
 import React from "react";
-import { CLIENTS } from "../data/zportConstants";
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <header className="mb-6">
-    <h3 className="text-text text-xl font-semibold capitalize sm:text-2xl">
-      {children}
-    </h3>
-  </header>
-);
+import { CLIENTS } from "../data/portfolioData";
+import { SectionTitle } from "./ui/SectionTitle";
 
 const ClientsList = () => {
   return (

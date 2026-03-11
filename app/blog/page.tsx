@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BLOG_POSTS } from "../../data/zportConstants";
+import { BLOG_POSTS } from "../../data/portfolioData";
+import { PageWrapper } from "../../components/ui/PageWrapper";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <PageWrapper>
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -69,6 +70,6 @@ export default function BlogPage() {
           </div>
         ))}
       </div>
-    </article>
+    </PageWrapper>
   );
 }

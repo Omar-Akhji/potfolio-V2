@@ -1,7 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Award } from "lucide-react";
-import { EXPERIENCE, EDUCATION, SKILLS } from "../../data/zportConstants";
+import { EXPERIENCE, EDUCATION, SKILLS } from "../../data/portfolioData";
+import { SectionTitle } from "../../components/ui/SectionTitle";
+import { PageWrapper } from "../../components/ui/PageWrapper";
 
 export const metadata: Metadata = {
   title: "Resume",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <PageWrapper>
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -33,7 +35,7 @@ export default function ResumePage() {
               {/* Timeline Column */}
               <div className="flex w-10 shrink-0 flex-col items-center">
                 <div className="flex h-6 flex-col items-center justify-center">
-                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
+                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(99,70,230,0.4)] ring-4" />
                 </div>
                 <div className="bg-orange/20 group-hover:bg-orange/40 my-3 w-0.5 grow rounded-full transition-colors" />
               </div>
@@ -64,7 +66,7 @@ export default function ResumePage() {
               {/* Timeline Column */}
               <div className="flex w-10 shrink-0 flex-col items-center">
                 <div className="flex h-6 flex-col items-center justify-center">
-                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(255,165,0,0.4)] ring-4" />
+                  <div className="bg-orange ring-orange/20 z-10 size-4 shrink-0 rounded-full shadow-[0_0_15px_rgba(99,70,230,0.4)] ring-4" />
                 </div>
                 <div className="bg-orange/20 group-hover:bg-orange/40 my-3 w-0.5 grow rounded-full transition-colors" />
               </div>
@@ -88,7 +90,7 @@ export default function ResumePage() {
 
       {/* ── Technical Skills ── */}
       <section className="mt-12 mb-8">
-        <SectionTitle>Technical Skills</SectionTitle>
+        <SectionTitle icon={<Award className="size-5" />}>Technical Skills</SectionTitle>
         <div className="border-glass-border rounded-2xl border bg-white/5 p-8">
           <ul className="space-y-6">
             {SKILLS.map((skill) => (
@@ -113,18 +115,8 @@ export default function ResumePage() {
           </ul>
         </div>
       </section>
-    </article>
+    </PageWrapper>
   );
 }
 
-/* ── Reusable Section Title ── */
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <header className="mb-6 flex items-center gap-4">
-    <div className="border-glass-border bg-card text-orange shadow-1 flex size-10 shrink-0 items-center justify-center rounded-full border">
-      <Award className="size-5" />
-    </div>
-    <h3 className="text-text text-xl font-semibold capitalize sm:text-2xl">
-      {children}
-    </h3>
-  </header>
-);
+

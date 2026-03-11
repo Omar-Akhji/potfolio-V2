@@ -1,8 +1,26 @@
-import { Send } from "lucide-react";
+"use client";
+
+import { useActionState } from "react";
+import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { PageWrapper } from "./ui/PageWrapper";
+import {
+  sendContactEmail,
+  type ContactFormState,
+} from "../app/contact/actions";
+
+const initialState: ContactFormState = {
+  success: false,
+  message: "",
+};
 
 export default function ContactContent() {
+  const [state, formAction, isPending] = useActionState(
+    sendContactEmail,
+    initialState,
+  );
+
   return (
-    <article className="animate-fade-in border-glass-border bg-bg shadow-1 lg:shadow-5 rounded-card z-1 border p-4 pb-16 sm:mx-auto sm:w-130 sm:p-8 sm:pb-28 md:w-175 lg:w-237.5 xl:min-h-full xl:w-auto">
+    <PageWrapper>
       {/* ── Page Title ── */}
       <header>
         <h2 className="text-text after:from-yellow after:to-orange relative mb-8 pb-2 text-2xl font-semibold capitalize after:absolute after:bottom-0 after:left-0 after:h-0.75 after:w-8 after:rounded-sm after:bg-linear-to-r sm:pb-4 sm:text-[2rem] sm:font-semibold sm:after:h-1.25 sm:after:w-10">
@@ -27,52 +45,112 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* ── Contact Form (Mock matching CV aesthetic) ── */}
+      {/* ── Contact Form ── */}
       <section>
         <h3 className="text-text mb-6 text-xl font-semibold capitalize sm:text-2xl">
           Contact Form
         </h3>
 
-        <form className="space-y-6" action="#">
+        {/* Status Banner */}
+        {state.message && !state.errors && (
+          <div
+            className={`mb-6 flex items-center gap-3 rounded-xl border p-4 ${
+              state.success
+                ? "border-green-500/30 bg-green-500/10 text-green-400"
+                : "border-red-500/30 bg-red-500/10 text-red-400"
+            }`}
+            role="alert"
+          >
+            {state.success ? (
+              <CheckCircle2 className="size-5 shrink-0" />
+            ) : (
+              <AlertCircle className="size-5 shrink-0" />
+            )}
+            <p className="text-sm font-medium">{state.message}</p>
+          </div>
+        )}
+
+        <form className="space-y-6" action={formAction}>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
+              <label htmlFor="fullname" className="sr-only">
+                Full name
+              </label>
               <input
+                id="fullname"
                 type="text"
                 name="fullname"
-                className="bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 w-full rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none"
+                className={`bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 w-full rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none ${
+                  state.errors?.fullname ? "border-red-500/50!" : ""
+                }`}
                 placeholder="Full name"
                 required
+                disabled={isPending}
               />
+              {state.errors?.fullname && (
+                <p className="mt-1.5 text-xs font-medium text-red-400">
+                  {state.errors.fullname}
+                </p>
+              )}
             </div>
             <div>
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
               <input
+                id="email"
                 type="email"
                 name="email"
-                className="bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 w-full rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none"
+                className={`bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 w-full rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none ${
+                  state.errors?.email ? "border-red-500/50!" : ""
+                }`}
                 placeholder="Email address"
                 required
+                disabled={isPending}
               />
+              {state.errors?.email && (
+                <p className="mt-1.5 text-xs font-medium text-red-400">
+                  {state.errors.email}
+                </p>
+              )}
             </div>
           </div>
 
           <div>
+            <label htmlFor="message" className="sr-only">
+              Your Message
+            </label>
             <textarea
+              id="message"
               name="message"
-              className="bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 min-h-37.5 w-full resize-y rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none"
+              className={`bg-card border-glass-border text-text placeholder:text-text-muted focus:border-orange focus:ring-orange/50 min-h-37.5 w-full resize-y rounded-xl border p-4 transition-all focus:ring-1 focus:outline-none ${
+                state.errors?.message ? "border-red-500/50!" : ""
+              }`}
               placeholder="Your Message"
               required
+              disabled={isPending}
             ></textarea>
+            {state.errors?.message && (
+              <p className="mt-1.5 text-xs font-medium text-red-400">
+                {state.errors.message}
+              </p>
+            )}
           </div>
 
           <button
             type="submit"
-            className="group from-yellow to-orange text-bg ml-auto flex items-center gap-2 rounded-full bg-linear-to-r px-6 py-3 font-semibold shadow-[0_0_15px_rgba(255,165,0,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(255,165,0,0.6)] focus:outline-none"
+            disabled={isPending}
+            className="group from-yellow to-orange text-bg ml-auto flex items-center gap-2 rounded-full bg-linear-to-r px-6 py-3 font-semibold shadow-[0_0_15px_rgba(99,70,230,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(99,70,230,0.6)] focus:outline-none disabled:pointer-events-none disabled:opacity-60"
           >
-            <Send className="size-5" />
-            <span>Send Message</span>
+            {isPending ? (
+              <Loader2 className="size-5 animate-spin" />
+            ) : (
+              <Send className="size-5" />
+            )}
+            <span>{isPending ? "Sending..." : "Send Message"}</span>
           </button>
         </form>
       </section>
-    </article>
+    </PageWrapper>
   );
 }

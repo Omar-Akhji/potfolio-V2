@@ -1,15 +1,10 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { TESTIMONIALS } from "../data/zportConstants";
+import { TESTIMONIALS } from "../data/portfolioData";
+import { SectionTitle } from "./ui/SectionTitle";
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <header className="mb-6">
-    <h3 className="text-text text-xl font-semibold capitalize sm:text-2xl">
-      {children}
-    </h3>
-  </header>
-);
+
 
 const TestimonialsList = () => {
   const [activeTestimonial, setActiveTestimonial] = useState<number | null>(
