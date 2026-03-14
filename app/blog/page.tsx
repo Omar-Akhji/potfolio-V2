@@ -51,6 +51,7 @@ export default function BlogPage() {
                 <span className="bg-card border-glass-border text-orange text-2.75 rounded-full border px-3 py-1 font-medium sm:text-xs">
                   {post.category}
                 </span>
+                <span className="text-text-muted text-3.5 sm:text-3.75">•</span>
                 <time
                   dateTime={post.dateTime}
                   className="text-text-muted text-3.5 sm:text-3.75 font-light"
